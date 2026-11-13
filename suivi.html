@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<script>window.__resources={"https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js": "assets/js/react.production.min.js", "https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/js/react-dom.production.min.js"};</script>
+<script src="assets/js/auth.js"></script>
+<title>Suivi – Portail des institutions</title>
+<script src="assets/js/dc-runtime.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0F7A4F}a:hover{color:#063B26}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #F5C02F;outline-offset:3px}
+.ige-field{transition:border-color .2s, box-shadow .2s, background .2s}
+.ige-field:focus-within{border-color:#0F7A4F !important;background:#FFFFFF !important;box-shadow:0 0 0 4px rgba(15,122,79,0.12)}
+.ige-switch{appearance:none;-webkit-appearance:none;flex:none;width:40px;height:24px;margin:0;border-radius:999px;background:#D2DED7;position:relative;cursor:pointer;transition:background .2s}
+.ige-switch::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#FFFFFF;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:left .2s}
+.ige-switch:checked{background:#0F7A4F}.ige-switch:checked::after{left:19px}
+.ige-btn{transition:transform .15s, box-shadow .15s, background .15s}.ige-btn:hover{transform:translateY(-1px)}
+.ige-nl2:hover{background:#F2F9F5}
+html,body{background:#063B26}
+.ige-row{display:flex;flex-wrap:wrap;align-items:center;gap:24px 90px}
+.ige-rev{flex-direction:row-reverse}
+.ige-stage{flex:1 1 420px;min-width:0;display:flex;justify-content:center}
+.ige-box{position:relative;width:460px;max-width:100%;height:350px}
+@keyframes igeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.ige-float{animation:igeFloat 6s ease-in-out infinite}
+.ige-float2{animation:igeFloat 7s ease-in-out -2s infinite}
+@media (prefers-reduced-motion:reduce){.ige-float,.ige-float2{animation:none}}
+@media (max-width:980px){.ige-hide-md{display:none !important}}
+@media (max-width:760px){.ige-rev{flex-direction:row}.ige-hide-sm{display:none !important}}
+.ige-step{position:relative;flex:1 1 180px;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.ige-tbl{width:100%;border-collapse:separate;border-spacing:0;font-size:12.5px}
+.ige-tbl th{text-align:left;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#556B60;padding:0 14px 12px}
+.ige-tbl td{padding:14px;border-top:1px solid #E9F0EC;white-space:nowrap}
+</style>
+</helmet>
+<div style="background: #FFFFFF; color: #0B2A1C; font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.55">
+<section style="position: relative; overflow: hidden; background: #0F6B45; color: #FFFFFF; padding-bottom: 140px">
+<svg aria-hidden="true" sc-camel-view-box="0 0 1440 620" sc-camel-preserve-aspect-ratio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%">
+<defs>
+<radialGradient id="igeHl" cx="78%" cy="0%" r="70%"><stop offset="0" stop-color="#2FA36F" stop-opacity="0.9"></stop><stop offset="1" stop-color="#2FA36F" stop-opacity="0"></stop></radialGradient>
+<radialGradient id="igeSh" cx="10%" cy="100%" r="60%"><stop offset="0" stop-color="#063B26" stop-opacity="0.75"></stop><stop offset="1" stop-color="#063B26" stop-opacity="0"></stop></radialGradient>
+<pattern id="igeDots" width="26" height="26" sc-camel-pattern-units="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#FFFFFF" opacity="0.06"></circle></pattern>
+</defs>
+<rect width="1440" height="620" fill="url(#igeHl)"></rect>
+<rect width="1440" height="620" fill="url(#igeSh)"></rect>
+<rect width="1440" height="620" fill="url(#igeDots)"></rect>
+<g fill="none" stroke="#FFFFFF" opacity="0.10">
+<circle cx="720" cy="360" r="300"></circle>
+</g>
+</svg>
+<!-- menu -->
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 18px 20px 0">
+<header style="display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; padding: 10px 10px 10px 16px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 18px 40px -18px rgba(3,30,19,0.55)">
+<a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0B2A1C">
+<img src="assets/img/logo-igf.png" alt="IGF – Portail des institutions" width="156" height="54" style="display: block; height: 54px; width: auto">
+</a>
+<nav aria-label="Navigation principale" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px; font-size: 13.5px; font-weight: 700">
+<a href="index.html" class="ige-nl2" style="color: #1B3A2B; text-decoration: none; padding: 10px 16px; border-radius: 12px">Accueil</a>
+<a href="fonctionnalites.html" class="ige-nl2" style="color: #1B3A2B; text-decoration: none; padding: 10px 16px; border-radius: 12px">Fonctionnalités</a>
+<a href="suivi.html" style="color: #0F7A4F; text-decoration: none; padding: 10px 16px; border-radius: 12px; background: #E5F4EC">Suivi</a>
+<a href="index.html" class="ige-nl2" style="color: #1B3A2B; text-decoration: none; padding: 10px 16px; border-radius: 12px">Aide</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 8px">
+<a href="connexion.html" class="ige-btn" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 8px 0 18px; border-radius: 12px; background: #0F7A4F; color: #FFFFFF; font-size: 13px; font-weight: 800; text-decoration: none">Se connecter<span style="display: inline-flex; width: 28px; height: 28px; border-radius: 8px; background: #F5C02F; color: #2E2300; align-items: center; justify-content: center"><svg width="13" height="13" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+</div>
+</header>
+</div>
+
+
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 44px 24px 0; display: flex; flex-direction: column; gap: 14px">
+<nav aria-label="Fil d’Ariane" style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: #BFE3CF"><a href="index.html" style="color: #BFE3CF; text-decoration: none">Accueil</a><svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg><span style="color: #FFFFFF">Suivi</span></nav>
+<h1 style="margin: 0; font-weight: 800; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.06; letter-spacing: -0.045em">Où en est <span style="color: #FBE08A">chaque pièce ?</span></h1>
+<p style="margin: 0; max-width: 520px; font-size: 14.5px; color: #D3EEDF">Reçue, examinée, validée : l’état réel de vos transmissions, à tout moment.</p>
+</div>
+</section>
+<section style="position: relative; z-index: 2; max-width: 1160px; margin: -92px auto 0; padding: 0 20px">
+<div style="background: #FFFFFF; border-radius: 26px; padding: 30px 32px; box-shadow: 0 30px 60px -36px rgba(6,59,38,0.45), 0 0 0 1px #E9F0EC">
+<p style="margin: 0 0 30px; text-align: center; font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #7A5A00">Le parcours d’une pièce</p>
+<div style="position: relative">
+<div aria-hidden="true" class="ige-hide-sm" style="position: absolute; left: 12.5%; right: 12.5%; top: 29px; height: 4px; border-radius: 4px; background: linear-gradient(90deg, #CFE5D9 0%, #9ED6B8 40%, #F5C02F 70%, #0F7A4F 100%)"></div>
+<ol style="position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 32px 20px">
+<li style="position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px">
+<span style="position: relative; z-index: 1; width: 60px; height: 60px; border-radius: 50%; background: #FFFFFF; border: 2.5px dashed #9ED6B8; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 8px #FFFFFF"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#0F7A4F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><path d="M14 3v6h6"></path></svg></span>
+<span style="margin-top: 6px; font-size: 10.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #889A90">Étape 1</span>
+<h3 style="margin: 0; font-size: 17px; font-weight: 800; letter-spacing: -0.02em">À transmettre</h3>
+<p style="margin: 0; max-width: 200px; font-size: 12.5px; color: #556B60">La pièce est demandée.</p>
+<span style="margin-top: 2px; font-size: 10.5px; font-weight: 800; padding: 4px 10px; border-radius: 999px; background: #FFF5D1; color: #7A5A00">Votre institution</span>
+</li>
+<li style="position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px">
+<span style="position: relative; z-index: 1; width: 60px; height: 60px; border-radius: 50%; background: #E5F4EC; border: 2.5px solid #9ED6B8; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 8px #FFFFFF"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#0F7A4F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13l2.5-7h11L20 13v6H4z"></path></svg></span>
+<span style="margin-top: 6px; font-size: 10.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #889A90">Étape 2</span>
+<h3 style="margin: 0; font-size: 17px; font-weight: 800; letter-spacing: -0.02em">Reçue</h3>
+<p style="margin: 0; max-width: 200px; font-size: 12.5px; color: #556B60">Déposée, en attente d’examen.</p>
+<span style="margin-top: 2px; font-size: 10.5px; font-weight: 800; padding: 4px 10px; border-radius: 999px; background: #FFF5D1; color: #7A5A00">Votre institution</span>
+</li>
+<li style="position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px">
+<span style="position: relative; z-index: 1; width: 60px; height: 60px; border-radius: 50%; background: #F5C02F; border: 2.5px solid #F5C02F; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 8px #FFFFFF"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="#2E2300" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v6M12 17h.01"></path></svg></span>
+<span style="margin-top: 6px; font-size: 10.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #889A90">Étape 3</span>
+<h3 style="margin: 0; font-size: 17px; font-weight: 800; letter-spacing: -0.02em">Complément</h3>
+<p style="margin: 0; max-width: 200px; font-size: 12.5px; color: #556B60">Une précision est demandée.</p>
+<span style="margin-top: 2px; font-size: 10.5px; font-weight: 800; padding: 4px 10px; border-radius: 999px; background: #E5F4EC; color: #0F7A4F">IGE</span>
+</li>
+<li style="position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px">
+<span style="position: relative; z-index: 1; width: 60px; height: 60px; border-radius: 50%; background: #0F7A4F; border: 2.5px solid #0F7A4F; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 8px #FFFFFF, 0 0 0 12px #E5F4EC"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></span>
+<span style="margin-top: 6px; font-size: 10.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #889A90">Étape 4</span>
+<h3 style="margin: 0; font-size: 17px; font-weight: 800; letter-spacing: -0.02em">Validée</h3>
+<p style="margin: 0; max-width: 200px; font-size: 12.5px; color: #556B60">Examinée et acceptée.</p>
+<span style="margin-top: 2px; font-size: 10.5px; font-weight: 800; padding: 4px 10px; border-radius: 999px; background: #E5F4EC; color: #0F7A4F">IGE</span>
+</li>
+</ol>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1160px; margin: 0 auto; padding: 64px 20px 56px; display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch">
+<div style="flex: 1 1 300px; min-width: 0; position: relative; overflow: hidden; border-radius: 26px; background: #0B5D3B; color: #FFFFFF; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px">
+<svg aria-hidden="true" sc-camel-view-box="0 0 200 200" style="position: absolute; right: -50px; bottom: -50px; width: 220px; height: 220px"><g fill="none" stroke="#F5C02F" opacity="0.3"><circle cx="100" cy="100" r="45"></circle><circle cx="100" cy="100" r="75"></circle><circle cx="100" cy="100" r="98"></circle></g></svg>
+<div style="position: relative; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #F9D873">À retenir</span>
+<h2 style="margin: 0; font-size: 30px; font-weight: 800; line-height: 1.05; letter-spacing: -0.05em">Reçue <span style="color: #F5C02F">≠</span> Validée</h2>
+<p style="margin: 0; font-size: 13px; color: #C9E8D7">La réception confirme le dépôt. La validation intervient après examen par l’équipe d’inspection.</p>
+</div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 8px">
+<span style="display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.1); font-size: 12px; font-weight: 700"><span style="width: 8px; height: 8px; border-radius: 50%; background: #9ED6B8"></span>Reçue : la pièce est bien arrivée</span>
+<span style="display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 14px; background: #FFFFFF; color: #0B5D3B; font-size: 12px; font-weight: 800"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F5C02F"></span>Validée : la pièce est acceptée</span>
+</div>
+</div>
+
+<div style="flex: 2 1 520px; min-width: 0; border-radius: 26px; background: #FFFFFF; box-shadow: 0 0 0 1px #E9F0EC; padding: 26px 18px 12px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; padding: 0 14px 18px">
+<div><h2 style="margin: 0; font-size: 18px; font-weight: 800; letter-spacing: -0.02em">Tableau de suivi</h2><p style="margin: 2px 0 0; font-size: 12px; color: #556B60">Aperçu illustratif — vos données apparaissent après connexion.</p></div>
+<span style="font-size: 11px; font-weight: 700; padding: 6px 12px; border-radius: 999px; background: #F1F6F3; color: #34493F">Mission [Réf.]</span>
+</div>
+<div style="overflow-x: auto">
+<sc-raw-table class="ige-tbl">
+<sc-raw-thead><sc-raw-tr><sc-raw-th scope="col">Pièce</sc-raw-th><sc-raw-th scope="col">Dépôt</sc-raw-th><sc-raw-th scope="col">Version</sc-raw-th><sc-raw-th scope="col">Statut</sc-raw-th></sc-raw-tr></sc-raw-thead>
+<sc-raw-tbody><sc-raw-tr><sc-raw-td style="font-weight: 700">[Pièce demandée]</sc-raw-td><sc-raw-td style="color: #556B60">[date]</sc-raw-td><sc-raw-td><span style="padding: 3px 8px; border-radius: 8px; background: #F1F6F3; font-size: 11px; font-weight: 700">—</span></sc-raw-td><sc-raw-td><span style="display: inline-block; padding: 4px 10px; border-radius: 999px; border: 1.5px dashed #9ED6B8; font-size: 10.5px; font-weight: 800; color: #34493F">À transmettre</span></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td style="font-weight: 700">[Pièce demandée]</sc-raw-td><sc-raw-td style="color: #556B60">[date]</sc-raw-td><sc-raw-td><span style="padding: 3px 8px; border-radius: 8px; background: #F1F6F3; font-size: 11px; font-weight: 700">v1</span></sc-raw-td><sc-raw-td><span style="display: inline-block; padding: 4px 10px; border-radius: 999px; background: #E5F4EC; font-size: 10.5px; font-weight: 800; color: #0F7A4F">Reçue</span></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td style="font-weight: 700">[Pièce demandée]</sc-raw-td><sc-raw-td style="color: #556B60">[date]</sc-raw-td><sc-raw-td><span style="padding: 3px 8px; border-radius: 8px; background: #F1F6F3; font-size: 11px; font-weight: 700">v1</span></sc-raw-td><sc-raw-td><span style="display: inline-block; padding: 4px 10px; border-radius: 999px; background: #F5C02F; font-size: 10.5px; font-weight: 800; color: #2E2300">Complément</span></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td style="font-weight: 700">[Pièce demandée]</sc-raw-td><sc-raw-td style="color: #556B60">[date]</sc-raw-td><sc-raw-td><span style="padding: 3px 8px; border-radius: 8px; background: #F1F6F3; font-size: 11px; font-weight: 700">v2</span></sc-raw-td><sc-raw-td><span style="display: inline-block; padding: 4px 10px; border-radius: 999px; background: #0F7A4F; font-size: 10.5px; font-weight: 800; color: #FFFFFF">✓ Validée</span></sc-raw-td></sc-raw-tr></sc-raw-tbody>
+</sc-raw-table>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1160px; margin: 0 auto; padding: 0 20px 72px">
+<div style="position: relative; overflow: hidden; border-radius: 26px; background: #FFF5D1; padding: 28px 32px; display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between">
+<div style="display: flex; align-items: center; gap: 14px">
+<span style="display: inline-flex; width: 48px; height: 48px; border-radius: 15px; background: #F5C02F; align-items: center; justify-content: center"><svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="#2E2300" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9a6 6 0 0 1 12 0c0 6 2.5 8 2.5 8h-17S6 15 6 9z"></path><path d="M10 20a2 2 0 0 0 4 0"></path></svg></span>
+<div><h2 style="margin: 0; font-size: 18px; font-weight: 800; letter-spacing: -0.02em; color: #2E2300">Vous êtes prévenu</h2><p style="margin: 2px 0 0; font-size: 12.5px; color: #4A3800">Dans le portail et par email.</p></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="font-size: 11.5px; font-weight: 700; padding: 8px 13px; border-radius: 999px; background: #FFFFFF; color: #2E2300">Mission affectée</span>
+<span style="font-size: 11.5px; font-weight: 700; padding: 8px 13px; border-radius: 999px; background: #FFFFFF; color: #2E2300">Nouvelle demande</span>
+<span style="font-size: 11.5px; font-weight: 700; padding: 8px 13px; border-radius: 999px; background: #FFFFFF; color: #2E2300">Nouveau message</span>
+<span style="font-size: 11.5px; font-weight: 700; padding: 8px 13px; border-radius: 999px; background: #FFFFFF; color: #2E2300">Calendrier modifié</span>
+<span style="font-size: 11.5px; font-weight: 800; padding: 8px 13px; border-radius: 999px; background: #0F7A4F; color: #FFFFFF">Échéance proche</span>
+</div>
+</div>
+</section>
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer style="background: #063B26; color: #A6CDB8">
+<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px 0">
+<div style="display: flex; flex-wrap: wrap; gap: 28px 56px; padding-bottom: 32px">
+<div style="flex: 2 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="display: inline-flex; align-self: flex-start; padding: 12px 18px; border-radius: 16px; background: #FFFFFF; box-shadow: 0 10px 30px -18px rgba(0,0,0,0.6)"><img src="assets/img/logo-igf.png" alt="IGF – Portail des institutions" width="130" height="45" style="display: block; height: 45px; width: auto"></div>
+<p style="margin: 0; max-width: 300px; font-size: 13px">L’espace d’échanges entre l’IGE et les institutions contrôlées.</p>
+</div>
+<nav aria-label="Portail" style="flex: 1 1 140px; min-width: 0; display: flex; flex-direction: column; gap: 4px; font-size: 13px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #F5C02F; margin-bottom: 8px">Portail</span>
+<a href="fonctionnalites.html" style="color: #E0F1E8; text-decoration: none; padding: 5px 0">Fonctionnalités</a>
+<a href="suivi.html" style="color: #E0F1E8; text-decoration: none; padding: 5px 0">Suivi</a>
+<a href="connexion.html" style="color: #E0F1E8; text-decoration: none; padding: 5px 0">Connexion</a>
+</nav>
+<nav aria-label="Aide" style="flex: 1 1 140px; min-width: 0; display: flex; flex-direction: column; gap: 4px; font-size: 13px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #F5C02F; margin-bottom: 8px">Aide</span>
+<a href="#" style="color: #E0F1E8; text-decoration: none; padding: 5px 0">Guide d’utilisation</a>
+<a href="#" style="color: #E0F1E8; text-decoration: none; padding: 5px 0">Questions fréquentes</a>
+<a href="#" style="color: #E0F1E8; text-decoration: none; padding: 5px 0">Demander un accès</a>
+</nav>
+<div style="flex: 1 1 180px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #E0F1E8">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #F5C02F; margin-bottom: 6px">Contact</span>
+<span>[adresse email]</span><span>[téléphone]</span><span>Nouakchott, Mauritanie</span>
+</div>
+</div>
+<div style="margin: 0 -24px; padding: 12px 24px; background: #052F1E; border-radius: 14px 14px 0 0; display: flex; flex-wrap: wrap; gap: 4px 28px; justify-content: space-between; align-items: center; font-size: 11.5px">
+<span>© [Année] Inspection générale de l’État · République Islamique de Mauritanie</span>
+<nav aria-label="Liens légaux" style="display: flex; flex-wrap: wrap; gap: 4px 20px"><a href="#" style="color: #E0F1E8; text-decoration: none; padding: 6px 0">Confidentialité</a><a href="#" style="color: #E0F1E8; text-decoration: none; padding: 6px 0">Mentions légales</a><a href="#" style="color: #E0F1E8; text-decoration: none; padding: 6px 0">Accessibilité</a></nav>
+<span style="font-weight: 800; letter-spacing: 0.14em; font-size: 11px; color: #F5C02F">HONNEUR · FRATERNITÉ · JUSTICE</span>
+</div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1600}}">
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = {  }; }
+  renderVals() { return {}; }
+}
+</script>
+
+
+</body></html>

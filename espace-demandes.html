@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr" data-protected=""><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<script>window.__resources={"https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js": "assets/js/react.production.min.js", "https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/js/react-dom.production.min.js"};</script>
+<script src="assets/js/auth.js"></script>
+<title>Demandes – Portail des institutions</title>
+<script src="assets/js/dc-runtime.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0F7A4F}a:hover{color:#063B26}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #F5C02F;outline-offset:3px}
+.ige-field{transition:border-color .2s, box-shadow .2s, background .2s}
+.ige-field:focus-within{border-color:#0F7A4F !important;background:#FFFFFF !important;box-shadow:0 0 0 4px rgba(15,122,79,0.12)}
+.ige-switch{appearance:none;-webkit-appearance:none;flex:none;width:40px;height:24px;margin:0;border-radius:999px;background:#D2DED7;position:relative;cursor:pointer;transition:background .2s}
+.ige-switch::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#FFFFFF;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:left .2s}
+.ige-switch:checked{background:#0F7A4F}.ige-switch:checked::after{left:19px}
+.ige-btn{transition:transform .15s, box-shadow .15s, background .15s}.ige-btn:hover{transform:translateY(-1px)}
+.ige-nl2:hover{background:#F2F9F5}
+html,body{background:#063B26}
+.ige-row{display:flex;flex-wrap:wrap;align-items:center;gap:24px 90px}
+.ige-rev{flex-direction:row-reverse}
+.ige-stage{flex:1 1 420px;min-width:0;display:flex;justify-content:center}
+.ige-box{position:relative;width:460px;max-width:100%;height:350px}
+@keyframes igeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.ige-float{animation:igeFloat 6s ease-in-out infinite}
+.ige-float2{animation:igeFloat 7s ease-in-out -2s infinite}
+@media (prefers-reduced-motion:reduce){.ige-float,.ige-float2{animation:none}}
+@media (max-width:980px){.ige-hide-md{display:none !important}}
+@media (max-width:760px){.ige-rev{flex-direction:row}.ige-hide-sm{display:none !important}}
+.ige-task{transition:background .15s}.ige-task:hover{background:#F8FBF9}
+.ige-link:hover{text-decoration:underline}
+.ige-mgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ige-split{display:grid;grid-template-columns:320px minmax(0,1fr);gap:20px;align-items:start}
+.ige-tabbar{display:flex;gap:4px;overflow-x:auto}
+@media (max-width:980px){.ige-split{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.ige-mgrid{grid-template-columns:minmax(0,1fr)}}
+.dq-toolbar{background:#FFFFFF;border-radius:20px;border:1px solid #E7ECE9;padding:12px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 24px 50px -36px rgba(6,59,38,0.55)}
+.dq-tabs{display:flex;flex-wrap:wrap;gap:4px;padding:4px;border-radius:14px;background:#F1F6F3}
+.dq-filters{display:flex;flex-wrap:wrap;gap:10px}
+.dq-select{position:relative;display:flex;align-items:center;gap:8px;min-height:44px;padding:0 6px 0 14px;border-radius:12px;background:#F3F6F4}
+.dq-select select{appearance:none;-webkit-appearance:none;border:0;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23556B60' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center;font:inherit;font-size:13px;font-weight:700;color:#0B2A1C;min-height:44px;padding:0 32px 0 0;cursor:pointer;outline:none}
+.dq-select:focus-within,.dq-search:focus-within{box-shadow:0 0 0 2px #0F7A4F}
+.dq-search{display:flex;align-items:center;gap:10px;min-height:44px;width:260px;max-width:100%;padding:0 14px;border-radius:12px;background:#F3F6F4;cursor:text}
+.dq-search input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:13px;outline:none;min-height:40px;color:#0B2A1C}
+.dq-split{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:start}
+.dq-ghead{display:flex;align-items:center;gap:10px;padding:18px 22px 14px;border-bottom:1px solid #EEF2F0}
+.dq-ghead h2{margin:0;font-size:15px;font-weight:800;letter-spacing:-0.02em}
+.dq-gcount{min-width:24px;padding:1px 8px;border-radius:999px;background:#F1F6F3;font-size:11.5px;font-weight:800;color:#34493F;text-align:center}
+.dq-ghint{margin-left:auto;font-size:12px;color:#889A90}
+.dq-list{list-style:none;margin:0;padding:0}
+.dq-row{display:grid;grid-template-columns:62px minmax(0,1fr) 150px 128px;gap:18px;align-items:center;padding:18px 22px;border-top:1px solid #EEF2F0;transition:background .15s}
+.dq-list .dq-row:first-child{border-top:0}
+.dq-row:hover{background:#F8FBF9}
+.dq-body{min-width:0;display:flex;flex-direction:column;gap:4px}
+.dq-body h3{margin:0;font-size:14.5px;font-weight:800;letter-spacing:-0.01em;color:#0B2A1C}
+.dq-body p{margin:0;font-size:12.5px;color:#556B60}
+.dq-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:4px}
+.dq-mission{font-size:11.5px;font-weight:600;color:#556B60}
+.dq-when{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+.dq-wlabel{font-size:10.5px;font-weight:700;color:#889A90}
+.dq-when b{font-size:13px}
+.dq-act{text-align:right}
+.dq-aside{display:flex;flex-direction:column;gap:16px;position:sticky;top:20px}
+.dq-card{background:#FFFFFF;border-radius:20px;border:1px solid #E7ECE9;padding:20px}
+.dq-ctitle{margin:0 0 14px;font-size:14.5px;font-weight:800;letter-spacing:-0.02em}
+.dq-prog{display:flex;flex-direction:column;gap:7px;padding:12px 0;border-top:1px solid #EEF2F0}
+.dq-prog:first-of-type{border-top:0;padding-top:0}
+.dq-ptop{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;font-size:12.5px}
+.dq-ptop>span{display:flex;flex-direction:column;gap:1px}
+.dq-ptop>span span{font-size:11.5px;color:#556B60}
+.dq-bar{display:block;height:6px;border-radius:999px;background:#EEF2F0;overflow:hidden}
+.dq-bar span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#0F7A4F,#2FA36F)}
+.dq-pnote{font-size:11.5px;color:#889A90}
+.dq-clink{display:inline-flex;align-items:center;gap:4px;margin-top:6px;font-size:12.5px;font-weight:800;text-decoration:none}
+.dq-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.dq-steps li{display:flex;gap:12px;align-items:flex-start}
+.dq-steps li>span{flex:none;display:inline-flex;width:26px;height:26px;border-radius:50%;background:#E5F4EC;color:#0F7A4F;font-size:12px;font-weight:800;align-items:center;justify-content:center}
+.dq-steps b{font-size:13px}
+.dq-steps p{margin:2px 0 0;font-size:12px;color:#556B60}
+.dq-legend{margin:0;display:flex;flex-direction:column;gap:12px}
+.dq-legend dt{margin:0 0 4px}
+.dq-legend dd{margin:0;font-size:12px;color:#556B60}
+@media (max-width:1020px){.dq-split{grid-template-columns:minmax(0,1fr)}.dq-aside{position:static}}
+@media (max-width:760px){.dq-row{grid-template-columns:52px minmax(0,1fr);gap:12px 14px}.dq-when{grid-column:2;flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px}.dq-row>span:first-child{align-self:start}.dq-act{grid-column:1 / -1;text-align:left}.dq-act a{width:100%}.dq-ghint{display:none}.dq-search{width:100%}}
+</style>
+</helmet>
+<div style="background: #FFFFFF; color: #0B2A1C; font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.55">
+<section style="position: relative; overflow: hidden; background: #0F6B45; color: #FFFFFF; padding-bottom: 100px">
+<svg aria-hidden="true" sc-camel-view-box="0 0 1440 620" sc-camel-preserve-aspect-ratio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%">
+<defs>
+<radialGradient id="igeHl" cx="78%" cy="0%" r="70%"><stop offset="0" stop-color="#2FA36F" stop-opacity="0.9"></stop><stop offset="1" stop-color="#2FA36F" stop-opacity="0"></stop></radialGradient>
+<radialGradient id="igeSh" cx="10%" cy="100%" r="60%"><stop offset="0" stop-color="#063B26" stop-opacity="0.75"></stop><stop offset="1" stop-color="#063B26" stop-opacity="0"></stop></radialGradient>
+<pattern id="igeDots" width="26" height="26" sc-camel-pattern-units="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#FFFFFF" opacity="0.06"></circle></pattern>
+</defs>
+<rect width="1440" height="620" fill="url(#igeHl)"></rect>
+<rect width="1440" height="620" fill="url(#igeSh)"></rect>
+<rect width="1440" height="620" fill="url(#igeDots)"></rect>
+<g fill="none" stroke="#FFFFFF" opacity="0.10">
+<circle cx="720" cy="360" r="300"></circle>
+</g>
+</svg>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 18px 20px 0">
+<header style="display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; padding: 10px 10px 10px 16px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 18px 40px -18px rgba(3,30,19,0.55)">
+<a href="espace-accueil.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0B2A1C">
+<img src="assets/img/logo-igf.png" alt="IGF – Portail des institutions" width="156" height="54" style="display: block; height: 54px; width: auto">
+</a>
+<nav aria-label="Espace" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px; font-size: 13.5px; font-weight: 700"><a href="espace-accueil.html" class="ige-nl2" style="display: inline-flex; align-items: center; color: #1B3A2B; text-decoration: none; padding: 10px 14px; border-radius: 12px">Accueil</a><a href="espace-missions.html" class="ige-nl2" style="display: inline-flex; align-items: center; color: #1B3A2B; text-decoration: none; padding: 10px 14px; border-radius: 12px">Mes missions</a><a href="espace-demandes.html" aria-current="page" style="display: inline-flex; align-items: center; color: #0F7A4F; text-decoration: none; padding: 10px 14px; border-radius: 12px; background: #E5F4EC">Demandes</a><a href="espace-transmissions.html" class="ige-nl2" style="display: inline-flex; align-items: center; color: #1B3A2B; text-decoration: none; padding: 10px 14px; border-radius: 12px">Transmissions</a><a href="espace-messages.html" class="ige-nl2" style="display: inline-flex; align-items: center; color: #1B3A2B; text-decoration: none; padding: 10px 14px; border-radius: 12px">Messages</a><a href="espace-dossiers.html" class="ige-nl2" style="display: inline-flex; align-items: center; color: #1B3A2B; text-decoration: none; padding: 10px 14px; border-radius: 12px">Dossiers</a></nav>
+<div style="display: flex; align-items: center; gap: 6px">
+<a href="#" aria-label="Mon profil : Mariem Mint Ahmed" style="display: inline-flex; width: 44px; height: 44px; border-radius: 50%; background: #F5C02F; color: #2E2300; font-size: 12px; font-weight: 800; align-items: center; justify-content: center; text-decoration: none">MA</a>
+<a href="index.html" aria-label="Se déconnecter" style="display: inline-flex; width: 44px; height: 44px; border-radius: 12px; align-items: center; justify-content: center; color: #1B3A2B"><svg width="19" height="19" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg></a>
+</div>
+</header>
+</div>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 34px 24px 0; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px">
+<div style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+<nav aria-label="Fil d’Ariane" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #BFE3CF"><a href="espace-accueil.html" style="color: #BFE3CF; text-decoration: none">Accueil</a><svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg><span style="color: #FFFFFF">Demandes</span></nav>
+<h1 style="margin: 0; font-weight: 800; font-size: clamp(26px, 3vw, 36px); line-height: 1.1; letter-spacing: -0.045em">Demandes</h1>
+<p style="margin: 0; font-size: 14.5px; color: #D3EEDF">6 pièces attendent une réponse de votre part, dont 2 cette semaine.</p>
+</div>
+<a href="espace-transmissions.html" class="ige-btn" style="display: flex; align-items: center; gap: 14px; padding: 10px 18px 10px 10px; border-radius: 18px; background: rgba(255,255,255,0.10); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18); color: #FFFFFF; text-decoration: none; margin-bottom: 4px">
+<span style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 50px; height: 52px; border-radius: 13px; background: #F5C02F; color: #2E2300"><b style="font-size: 19px; line-height: 1">17</b><span style="font-size: 9.5px; font-weight: 800">NOV.</span></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11.5px; font-weight: 700; color: #BFE3CF">Prochaine échéance · dans 4 jours</span><b style="font-size: 14px">Relevés bancaires du 3ᵉ trimestre</b></span>
+<svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#F5C02F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+</a>
+</div>
+</section>
+<main style="position: relative; z-index: 2; max-width: 1200px; margin: -64px auto 0; padding: 0 20px 80px; display: flex; flex-direction: column; gap: 20px">
+<div class="dq-toolbar">
+<div role="tablist" aria-label="Filtrer par statut" class="dq-tabs"><sc-for list="{{tabs}}" as="t" hint-placeholder-count="4"><button type="button" role="tab" aria-selected="{{t.sel}}" sc-camel-on-click="{{t.pick}}" style="{{t.style}}">{{t.label}}<span style="{{t.countStyle}}">{{t.count}}</span></button></sc-for></div>
+<div class="dq-filters">
+<label for="mf" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Filtrer par mission</label>
+<span class="dq-select"><svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#556B60" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18M6 12h12M10 17h4"></path></svg><sc-raw-select id="mf" sc-camel-on-change="{{pickMission}}"><option value="all">Toutes les missions</option><option value="IGE-2026-041">IGE-2026-041 · Exécution budgétaire</option><option value="IGE-2026-037">IGE-2026-037 · Marchés publics</option></sc-raw-select></span>
+<label for="dq" class="dq-search"><svg width="17" height="17" sc-camel-view-box="0 0 24 24" fill="none" stroke="#556B60" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Rechercher une pièce</span><input id="dq" type="search" placeholder="Rechercher une pièce" sc-camel-on-input="{{typeQuery}}"></label>
+</div>
+</div>
+
+<div class="dq-split">
+<div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="2">
+<section style="{{g.style}}" aria-label="{{g.title}}">
+<header class="dq-ghead"><span style="{{g.dotStyle}}"></span><h2>{{g.title}}</h2><span class="dq-gcount">{{g.count}}</span><span class="dq-ghint">{{g.hint}}</span></header>
+<ul class="dq-list">
+<sc-for list="{{g.items}}" as="d" hint-placeholder-count="2">
+<li class="dq-row">
+<span style="{{d.tileStyle}}"><b style="font-size: 22px; line-height: 1; letter-spacing: -0.03em">{{d.day}}</b><span style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.04em">{{d.mon}}</span></span>
+<div class="dq-body">
+<h3>{{d.title}}</h3>
+<p>{{d.desc}}</p>
+<div class="dq-meta"><span style="{{d.pillStyle}}">{{d.pill}}</span><span class="dq-mission">{{d.mission}} · {{d.mname}}</span></div>
+</div>
+<div class="dq-when"><span class="dq-wlabel">{{d.whenLabel}}</span><b>{{d.whenDate}}</b><span style="{{d.whenStyle}}">{{d.when}}</span></div>
+<div class="dq-act"><a href="{{d.href}}" class="ige-btn" style="{{d.btnStyle}}">{{d.action}}</a></div>
+</li>
+</sc-for>
+</ul>
+</section>
+</sc-for>
+<div style="{{emptyStyle}}" role="status">
+<span style="display: inline-flex; width: 48px; height: 48px; border-radius: 14px; background: #F1F6F3; align-items: center; justify-content: center"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="#556B60" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></span>
+<b style="font-size: 15px">Aucune pièce ne correspond à cette recherche.</b>
+<span style="font-size: 13px; color: #556B60">Modifiez le texte recherché, la mission ou le statut sélectionné.</span>
+<button type="button" sc-camel-on-click="{{resetFilters}}" class="ige-btn" style="margin-top: 6px; min-height: 40px; padding: 0 16px; border-radius: 12px; border: 0; background: #0F7A4F; color: #FFFFFF; font: inherit; font-size: 13px; font-weight: 800; cursor: pointer">Effacer les filtres</button>
+</div>
+<a href="espace-dossiers.html" style="{{allValStyle}}">Voir les 19 pièces validées dans Dossiers<svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+</div>
+
+<aside class="dq-aside">
+<section class="dq-card">
+<h2 class="dq-ctitle">Avancement par mission</h2>
+<div class="dq-prog"><div class="dq-ptop"><span><b>IGE-2026-041</b><span>Exécution budgétaire 2025</span></span><b>12 / 20</b></div><span class="dq-bar"><span style="width: 60%"></span></span><span class="dq-pnote">5 pièces restent à transmettre</span></div>
+<div class="dq-prog"><div class="dq-ptop"><span><b>IGE-2026-037</b><span>Marchés publics 2024</span></span><b>7 / 18</b></div><span class="dq-bar"><span style="width: 39%"></span></span><span class="dq-pnote">1 complément et 1 pièce à transmettre</span></div>
+<a href="espace-missions.html" class="dq-clink">Voir mes missions<svg width="14" height="14" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+</section>
+<section class="dq-card">
+<h2 class="dq-ctitle">Déposer une pièce</h2>
+<ol class="dq-steps">
+<li><span>1</span><div><b>Choisissez la demande</b><p>Cliquez sur « Déposer » en face de la pièce.</p></div></li>
+<li><span>2</span><div><b>Joignez le fichier</b><p>PDF, Excel ou image, 25 Mo maximum.</p></div></li>
+<li><span>3</span><div><b>Suivez l’examen</b><p>Le statut passe à « Reçue », puis « Validée ».</p></div></li>
+</ol>
+</section>
+<section class="dq-card">
+<h2 class="dq-ctitle">Les statuts</h2>
+<dl class="dq-legend">
+<div><dt><span style="display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; border: 1.5px dashed #9ED6B8; color: #34493F">À transmettre</span></dt><dd>La pièce est attendue par l’équipe d’inspection.</dd></div>
+<div><dt><span style="display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; background: #F5C02F; color: #2E2300">Complément demandé</span></dt><dd>Une nouvelle version est nécessaire.</dd></div>
+<div><dt><span style="display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; background: #E5F4EC; color: #0F7A4F">Reçue</span></dt><dd>Le dépôt est confirmé, l’examen est en cours.</dd></div>
+<div><dt><span style="display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; background: #0F7A4F; color: #FFFFFF">Validée</span></dt><dd>La pièce a été acceptée après examen.</dd></div>
+</dl>
+</section>
+</aside>
+</div>
+</main>
+<!-- ═══ FOOTER DE L’ESPACE ═══ -->
+<footer style="position: relative; overflow: hidden; background: #063B26; color: #A6CDB8">
+<svg aria-hidden="true" sc-camel-view-box="0 0 1440 300" sc-camel-preserve-aspect-ratio="xMaxYMax slice" style="position: absolute; inset: 0; width: 100%; height: 100%"><path d="M1080 300V190a120 120 0 0 1 240 0v110" fill="none" stroke="#F5C02F" stroke-width="1" opacity="0.18"></path></svg>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 0 20px">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.08)">
+<a href="#" style="flex: 1 1 240px; min-width: 0; display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,0.06); text-decoration: none; color: #FFFFFF">
+<span style="flex: none; display: inline-flex; width: 40px; height: 40px; border-radius: 12px; background: #0F7A4F; align-items: center; justify-content: center"><svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="#F9D873" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"></path><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"></path></svg></span>
+<span style="flex: 1; display: flex; flex-direction: column"><b style="font-size: 13.5px">Guide d’utilisation</b><span style="font-size: 12px; color: #A6CDB8">Déposer, compléter, suivre.</span></span><svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#A6CDB8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+<a href="#" style="flex: 1 1 240px; min-width: 0; display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,0.06); text-decoration: none; color: #FFFFFF">
+<span style="flex: none; display: inline-flex; width: 40px; height: 40px; border-radius: 12px; background: #0F7A4F; align-items: center; justify-content: center"><svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="#F9D873" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.7-2.5 2-2.5 4M12 17h.01"></path></svg></span>
+<span style="flex: 1; display: flex; flex-direction: column"><b style="font-size: 13.5px">Questions fréquentes</b><span style="font-size: 12px; color: #A6CDB8">Reçue, validée, compléments…</span></span><svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#A6CDB8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+<a href="#" style="flex: 1 1 240px; min-width: 0; display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 16px; background: #F5C02F; text-decoration: none; color: #2E2300">
+<span style="flex: none; display: inline-flex; width: 40px; height: 40px; border-radius: 12px; background: #063B26; align-items: center; justify-content: center"><svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="#F5C02F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg></span>
+<span style="flex: 1; display: flex; flex-direction: column"><b style="font-size: 13.5px">Une difficulté&nbsp;?</b><span style="font-size: 12px; color: #4A3800">+222 00 00 00 00 · assistance@exemple.mr</span></span><svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#2E2300" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 28px 56px; padding: 32px 0">
+<div style="flex: 2 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: inline-flex; align-self: flex-start; padding: 12px 18px; border-radius: 16px; background: #FFFFFF; box-shadow: 0 10px 30px -18px rgba(0,0,0,0.6)"><img src="assets/img/logo-igf.png" alt="IGF – Portail des institutions" width="130" height="45" style="display: block; height: 45px; width: auto"></div>
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 12px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #2FA36F"></span>Dernière connexion : 12 nov. 2026 à 08:14</span>
+</div>
+<nav aria-label="Mon espace" style="flex: 1 1 150px; min-width: 0; display: flex; flex-direction: column; gap: 2px; font-size: 13px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #F5C02F; margin-bottom: 8px">Mon espace</span>
+<a href="espace-missions.html" style="color: #E0F1E8; text-decoration: none; padding: 5px 0">Mes missions</a><a href="espace-demandes.html" style="color: #E0F1E8; text-decoration: none; padding: 5px 0">Demandes</a><a href="espace-transmissions.html" style="color: #E0F1E8; text-decoration: none; padding: 5px 0">Transmissions</a><a href="espace-messages.html" style="color: #E0F1E8; text-decoration: none; padding: 5px 0">Messages</a><a href="espace-dossiers.html" style="color: #E0F1E8; text-decoration: none; padding: 5px 0">Dossiers</a>
+</nav>
+<nav aria-label="Compte" style="flex: 1 1 150px; min-width: 0; display: flex; flex-direction: column; gap: 2px; font-size: 13px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #F5C02F; margin-bottom: 8px">Compte</span>
+<a href="#" style="color: #E0F1E8; text-decoration: none; padding: 5px 0">Mon profil</a><a href="#" style="color: #E0F1E8; text-decoration: none; padding: 5px 0">Changer le mot de passe</a><a href="index.html" style="color: #E0F1E8; text-decoration: none; padding: 5px 0">Se déconnecter</a>
+</nav>
+</div>
+</div>
+<div style="position: relative; background: #052F1E">
+<div style="max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; flex-wrap: wrap; gap: 6px 24px; justify-content: space-between; align-items: center; font-size: 11.5px">
+<span>© 2026 Inspection générale de l’État · République Islamique de Mauritanie</span>
+<nav aria-label="Liens légaux" style="display: flex; flex-wrap: wrap; gap: 4px 18px"><a href="#" style="color: #E0F1E8; text-decoration: none; padding: 6px 0">Confidentialité</a><a href="#" style="color: #E0F1E8; text-decoration: none; padding: 6px 0">Mentions légales</a><a href="#" style="color: #E0F1E8; text-decoration: none; padding: 6px 0">Accessibilité</a></nav>
+<span style="font-weight: 800; letter-spacing: 0.14em; font-size: 10.5px; color: #F5C02F">HONNEUR · FRATERNITÉ · JUSTICE</span>
+</div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1400}}">
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { f: 'todo', m: 'all', q: '' }; }
+  renderVals() {
+    const S = this.state, cur = S.f || 'todo';
+    const DATA = [
+      { g: 'week', st: 'todo', title: 'Relevés bancaires du 3ᵉ trimestre', desc: 'Tous les comptes ouverts, avec annexes.', mission: 'IGE-2026-041', mname: 'Exécution budgétaire 2025', day: '17', mon: 'NOV.', date: '17 nov. 2026', when: 'Dans 4 jours', action: 'Déposer', primary: true },
+      { g: 'week', st: 'comp', title: 'Contrats de marchés n° 12 à 18', desc: 'Versions signées des contrats n° 15 et 16.', mission: 'IGE-2026-037', mname: 'Marchés publics 2024', day: '19', mon: 'NOV.', date: '19 nov. 2026', when: 'Dans 6 jours', action: 'Compléter', primary: true },
+      { g: 'later', st: 'todo', title: 'Rapports de suivi des chantiers', desc: 'Rapports mensuels de janvier à septembre 2024.', mission: 'IGE-2026-037', mname: 'Marchés publics 2024', day: '24', mon: 'NOV.', date: '24 nov. 2026', when: 'Dans 11 jours', action: 'Déposer' },
+      { g: 'later', st: 'todo', title: 'État des engagements au 30 septembre', desc: 'Extrait du logiciel de gestion budgétaire.', mission: 'IGE-2026-041', mname: 'Exécution budgétaire 2025', day: '02', mon: 'DÉC.', date: '2 déc. 2026', when: 'Dans 19 jours', action: 'Déposer' },
+      { g: 'later', st: 'todo', title: 'Liste des comptes bancaires ouverts', desc: 'Avec numéros et banques de domiciliation.', mission: 'IGE-2026-041', mname: 'Exécution budgétaire 2025', day: '05', mon: 'DÉC.', date: '5 déc. 2026', when: 'Dans 22 jours', action: 'Déposer' },
+      { g: 'later', st: 'todo', title: 'Registre des immobilisations 2025', desc: 'Version à jour au 31 octobre.', mission: 'IGE-2026-041', mname: 'Exécution budgétaire 2025', day: '09', mon: 'DÉC.', date: '9 déc. 2026', when: 'Dans 26 jours', action: 'Déposer' },
+      { g: 'rec', st: 'rec', title: 'Procès-verbal de réception des travaux', desc: 'Reçu, examen en cours par l’équipe d’inspection.', mission: 'IGE-2026-037', mname: 'Marchés publics 2024', day: '10', mon: 'NOV.', date: '10 nov. 2026', when: 'Version 1', action: 'Consulter' },
+      { g: 'rec', st: 'rec', title: 'Budget initial 2025', desc: 'Reçu, examen en cours par l’équipe d’inspection.', mission: 'IGE-2026-041', mname: 'Exécution budgétaire 2025', day: '06', mon: 'NOV.', date: '6 nov. 2026', when: 'Version 1', action: 'Consulter' },
+      { g: 'val', st: 'val', title: 'Rapport financier 2024', desc: 'Accepté par l’équipe d’inspection.', mission: 'IGE-2026-041', mname: 'Exécution budgétaire 2025', day: '12', mon: 'NOV.', date: '12 nov. 2026', when: 'Version 1', action: 'Consulter' },
+      { g: 'val', st: 'val', title: 'Plan de passation des marchés', desc: 'Accepté par l’équipe d’inspection.', mission: 'IGE-2026-037', mname: 'Marchés publics 2024', day: '28', mon: 'OCT.', date: '28 oct. 2026', when: 'Version 2', action: 'Consulter' }
+    ];
+    const norm = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const q = norm(S.q).trim();
+    const inTab = (d) => cur === 'all' || (cur === 'todo' && (d.st === 'todo' || d.st === 'comp')) || (cur === 'rec' && d.st === 'rec') || (cur === 'val' && d.st === 'val');
+    const match = (d) => (S.m === 'all' || d.mission === S.m) && (!q || norm(d.title + ' ' + d.desc + ' ' + d.mission + ' ' + d.mname).indexOf(q) >= 0);
+    const tabDefs = [['todo', 'À traiter', 6], ['rec', 'En examen', 2], ['val', 'Validées', 19], ['all', 'Toutes', 27]];
+    const tabs = tabDefs.map(([k, l, n]) => ({
+      label: l, count: String(n), sel: cur === k ? 'true' : 'false',
+      pick: () => this.setState({ f: k }),
+      style: 'display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:0 14px;border:0;border-radius:10px;font:inherit;font-size:12.5px;font-weight:800;cursor:pointer;white-space:nowrap;transition:background .15s,color .15s;' + (cur === k ? 'background:#FFFFFF;color:#0B2A1C;box-shadow:0 1px 2px rgba(6,59,38,.12),0 6px 16px -10px rgba(6,59,38,.5);' : 'background:transparent;color:#556B60;'),
+      countStyle: 'padding:1px 7px;border-radius:999px;font-size:11px;font-weight:800;' + (cur === k ? 'background:#0F7A4F;color:#FFFFFF;' : 'background:#E1EBE5;color:#34493F;')
+    }));
+    const TILE = {
+      week: 'background:#FFF1BF;color:#5C4300;box-shadow:inset 0 0 0 1.5px #F5C02F;',
+      later: 'background:#F1F6F3;color:#34493F;',
+      rec: 'background:#E5F4EC;color:#0F7A4F;',
+      val: 'background:#0F7A4F;color:#FFFFFF;'
+    };
+    const PILL = {
+      todo: ['À transmettre', 'border:1.5px dashed #9ED6B8;color:#34493F;'],
+      comp: ['Complément demandé', 'background:#F5C02F;color:#2E2300;'],
+      rec: ['Reçue · en examen', 'background:#E5F4EC;color:#0F7A4F;'],
+      val: ['✓ Validée', 'background:#0F7A4F;color:#FFFFFF;']
+    };
+    const HREF = { todo: 'espace-transmissions.html', comp: 'espace-transmissions.html', rec: 'espace-dossiers.html', val: 'espace-dossiers.html' };
+    const btnPrimary = 'display:inline-flex;align-items:center;justify-content:center;min-height:40px;min-width:112px;padding:0 16px;border-radius:12px;background:#0F7A4F;color:#FFFFFF;font-size:12.5px;font-weight:800;text-decoration:none;box-shadow:0 12px 22px -14px rgba(15,122,79,.9);';
+    const btnGhost = 'display:inline-flex;align-items:center;justify-content:center;min-height:40px;min-width:112px;padding:0 16px;border-radius:12px;background:#FFFFFF;color:#0F7A4F;box-shadow:inset 0 0 0 1.5px #CFE5D9;font-size:12.5px;font-weight:800;text-decoration:none;';
+    const mk = (d) => ({
+      title: d.title, desc: d.desc, mission: d.mission, mname: d.mname, day: d.day, mon: d.mon,
+      tileStyle: 'display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:62px;height:66px;border-radius:16px;' + TILE[d.g],
+      pill: PILL[d.st][0], pillStyle: 'display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:800;white-space:nowrap;' + PILL[d.st][1],
+      whenLabel: d.st === 'rec' ? 'Déposée le' : d.st === 'val' ? 'Validée le' : 'Échéance',
+      whenDate: d.date, when: d.when,
+      whenStyle: d.g === 'week' ? 'padding:2px 8px;border-radius:999px;background:#FFF1BF;color:#5C4300;font-size:11px;font-weight:800' : 'font-size:11.5px;color:#889A90',
+      action: d.action, href: HREF[d.st], btnStyle: d.primary ? btnPrimary : btnGhost
+    });
+    const GROUPS = [
+      ['week', 'Cette semaine', 'Échéance sous 7 jours', '#F5C02F'],
+      ['later', 'Plus tard', 'Échéances à venir', '#9ED6B8'],
+      ['rec', 'En examen par l’IGE', 'Aucune action attendue', '#2FA36F'],
+      ['val', 'Validées récemment', 'Les 30 derniers jours', '#0F7A4F']
+    ];
+    let total = 0;
+    const groups = GROUPS.map(([k, title, hint, dot]) => {
+      const its = DATA.filter((d) => d.g === k && inTab(d) && match(d)).map(mk);
+      total += its.length;
+      return {
+        title, hint, count: String(its.length), items: its,
+        dotStyle: 'flex:none;width:8px;height:8px;border-radius:50%;background:' + dot,
+        style: its.length ? 'background:#FFFFFF;border-radius:20px;border:1px solid #E7ECE9;overflow:hidden;box-shadow:0 20px 44px -40px rgba(6,59,38,.6)' : 'display:none'
+      };
+    });
+    const showVal = (cur === 'val' || cur === 'all') && total > 0;
+    return {
+      tabs, groups,
+      emptyStyle: total ? 'display:none' : 'display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:48px 24px;background:#FFFFFF;border-radius:20px;border:1px dashed #CFE5D9',
+      allValStyle: showVal ? 'align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;text-decoration:none;padding:4px 2px' : 'display:none',
+      pickMission: (e) => this.setState({ m: e && e.target ? e.target.value : 'all' }),
+      typeQuery: (e) => this.setState({ q: e && e.target ? e.target.value : '' }),
+      resetFilters: () => {
+        const a = document.getElementById('dq'); if (a) a.value = '';
+        const b = document.getElementById('mf'); if (b) b.value = 'all';
+        this.setState({ q: '', m: 'all', f: 'all' });
+      }
+    };
+  }
+}
+</script>
+
+
+</body></html>

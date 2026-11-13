@@ -1,0 +1,41 @@
+PORTAIL DES INSTITUTIONS – IGF
+==============================
+
+Contenu
+-------
+index.html                 Accueil public (avant connexion)
+fonctionnalites.html       Fonctionnalités
+suivi.html                 Suivi
+connexion.html             Connexion
+espace-accueil.html        Espace – Tableau de bord
+espace-missions.html       Espace – Mes missions
+espace-mission.html        Espace – Fiche mission
+espace-demandes.html       Espace – Demandes (nouveau design)
+espace-transmissions.html  Espace – Transmissions
+espace-messages.html       Espace – Messages
+espace-dossiers.html       Espace – Dossiers
+assets/                    Logo, polices, scripts (aucune dépendance externe)
+
+Déploiement
+-----------
+Site 100 % statique. Copier tout le dossier (fichiers HTML + dossier assets)
+à la racine d'un hébergement web : Apache, Nginx, IIS, Netlify, GitHub Pages...
+La page d'entrée est index.html. Aucune base de données ni serveur applicatif requis.
+Pour tester en local : ouvrir un terminal dans ce dossier puis lancer
+    python3 -m http.server 8080
+et ouvrir http://localhost:8080
+
+Compte de démonstration
+-----------------------
+Identifiant  : mariem.ahmed@institution.mr
+Mot de passe : Portail@2026
+
+Les pages "espace-*" redirigent vers connexion.html tant qu'on n'est pas connecté.
+"Rester connecté" garde la session après fermeture du navigateur.
+L'icône de déconnexion ferme la session.
+
+Pour modifier ou ajouter un compte : éditer assets/js/auth.js (liste ACCOUNTS).
+
+IMPORTANT : cette connexion est une démonstration côté navigateur. Le mot de passe
+est lisible dans assets/js/auth.js. Pour la mise en production réelle, la
+vérification doit être faite par un serveur (API d'authentification).
